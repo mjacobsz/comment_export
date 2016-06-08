@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<disqus xmlns="http://disqus.com"
+        xmlns:dsq="http://disqus.com/disqus-internals"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://disqus.com/api/schemas/1.0/disqus.xsd http://disqus.com/api/schemas/1.0/disqus-internals.xsd">
+
+  <thread dsq:id="1"><link>http://example.com/aaaa</link></thread>
+  <thread dsq:id="2"><link>http://example.com/bbbb</link></thread>
+  <thread dsq:id="3"><link>http://example.com/cccc</link></thread>
+  <thread dsq:id="4"><link>http://example.com/dddd</link></thread>
+
+  <post>
+    <message>AAA</message>
+    <author>
+      <email>aaa@example.com</email>
+    </author>
+    <thread dsq:id="1" />
+  </post>
+
+  <post>
+    <message>BBB</message>
+    <author>
+      <email>bbb@example.com</email>
+    </author>
+    <thread dsq:id="1" />
+  </post>
+
+  <post>
+    <message>CCC</message>
+    <author>
+      <email>ccc@example.com</email>
+    </author>
+    <thread dsq:id="2" />
+  </post>
+
+  <post>
+    <message>DDD</message>
+    <author>
+      <email>ddd@example.com</email>
+    </author>
+    <thread dsq:id="2" />
+  </post>
+
+  <post>
+    <message>EEE</message>
+    <author>
+      <email>eee@example.com</email>
+    </author>
+    <thread dsq:id="2" />
+  </post>
+
+  <post>
+    <message>FFF</message>
+    <author>
+      <email>fff@example.com</email>
+    </author>
+    <thread dsq:id="4" />
+  </post>
+
+  <post>
+    <message>GGG</message>
+    <author>
+      <email>ggg@example.com</email>
+    </author>
+    <thread dsq:id="3" />
+  </post>
+
+  <post>
+    <message>HHH</message>
+    <author>
+      <email>hhh@example.com</email>
+    </author>
+    <thread dsq:id="3" />
+  </post>
+
+  <post>
+    <message>III</message>
+    <author>
+      <email>iii@example.com</email>
+    </author>
+    <thread dsq:id="4" />
+  </post>
+
+</disqus>

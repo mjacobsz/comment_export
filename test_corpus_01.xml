@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<leesplankje xmlns="http://example.com/leesplankje" xmlns:dsq="http://example.com/leesplankje/dsq">
+
+  <aap dsq:id="1">AA</aap>
+  <aap dsq:id="2">BB</aap>
+  <aap dsq:id="3">CC</aap>
+  <aap dsq:id="4">DD</aap>
+
+  <noot>
+    <wim>AAA</wim>
+    <aap dsq:id="1" />
+  </noot>
+
+  <noot>
+    <wim>BBB</wim>
+    <aap dsq:id="1" />
+  </noot>
+
+  <noot>
+    <wim>CCC</wim>
+    <aap dsq:id="2" />
+  </noot>
+
+  <noot>
+    <wim>DDD</wim>
+    <aap dsq:id="2" />
+  </noot>
+
+  <noot>
+    <wim>EEE</wim>
+    <aap dsq:id="2" />
+  </noot>
+
+  <noot>
+    <wim>FFF</wim>
+    <aap dsq:id="4" />
+  </noot>
+
+  <noot>
+    <wim>GGG</wim>
+    <aap dsq:id="3" />
+  </noot>
+
+  <noot>
+    <wim>HHH</wim>
+    <aap dsq:id="3" />
+  </noot>
+
+  <noot>
+    <wim>III</wim>
+    <aap dsq:id="4" />
+  </noot>
+
+
+
+</leesplankje>
