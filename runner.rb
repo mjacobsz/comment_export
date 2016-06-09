@@ -43,12 +43,12 @@ ns = doc.namespaces
 
 threads = {}
 
-doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |p|
-  text  = p.xpath('./xmlns:message', ns).text
-  email = p.xpath('./xmlns:author/xmlns:email', ns).text
+doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
+  text  = nokogiri_post.xpath('./xmlns:message', ns).text
+  email = nokogiri_post.xpath('./xmlns:author/xmlns:email', ns).text
   post = Post.new(email, text)
 
-  thread_id = p.at_xpath('./xmlns:thread', ns).attributes["id"].value
+  thread_id = nokogiri_post.at_xpath('./xmlns:thread', ns).attributes["id"].value
 
   if (!threads[thread_id])
     thread_node = doc.xpath("/xmlns:disqus/xmlns:thread[@dsq:id=#{thread_id}]", ns)

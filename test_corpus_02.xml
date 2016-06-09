@@ -11,6 +11,7 @@
   <thread dsq:id="4"><link>http://example.com/dddd</link></thread>
 
   <post>
+    <id>39</id>
     <message>AAA</message>
     <author>
       <email>aaa@example.com</email>
@@ -19,6 +20,7 @@
   </post>
 
   <post>
+    <id>42</id>
     <message>BBB</message>
     <author>
       <email>bbb@example.com</email>
@@ -27,6 +29,7 @@
   </post>
 
   <post>
+    <id>92</id>
     <message>CCC</message>
     <author>
       <email>ccc@example.com</email>
@@ -35,6 +38,7 @@
   </post>
 
   <post>
+    <id>102</id>
     <message>DDD</message>
     <author>
       <email>ddd@example.com</email>
@@ -43,6 +47,7 @@
   </post>
 
   <post>
+    <id>140</id>
     <message>EEE</message>
     <author>
       <email>eee@example.com</email>
@@ -51,6 +56,7 @@
   </post>
 
   <post>
+    <id>146</id>
     <message>FFF</message>
     <author>
       <email>fff@example.com</email>
@@ -59,6 +65,7 @@
   </post>
 
   <post>
+    <id>188</id>
     <message>GGG</message>
     <author>
       <email>ggg@example.com</email>
@@ -67,6 +74,7 @@
   </post>
 
   <post>
+    <id>218</id>
     <message>HHH</message>
     <author>
       <email>hhh@example.com</email>
@@ -75,6 +83,7 @@
   </post>
 
   <post>
+    <id>268</id>
     <message>III</message>
     <author>
       <email>iii@example.com</email>
@@ -82,4 +91,72 @@
     <thread dsq:id="4" />
   </post>
 
+  <post>
+    <id>293</id>
+    <message>JJJ</message>
+    <author>
+      <email>jjj@example.com</email>
+    </author>
+    <thread dsq:id="4" />
+    <parent dsq:id="1">268</parent>
+  </post>
+
 </disqus>
+
+
+<!--
+
+  <thread dsq:id="2">
+    <id>1</id>
+    <forum>disqusdev</forum>
+    <category dsq:id="1"/>
+    <link/>
+    <title/>
+    <message/>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </thread>
+
+  ...
+
+  <post dsq:id="1">
+    <id>2</id>
+    <message>Mother Russia</message>
+    <thread>1</thread>
+    <isSpam>true</isSpam>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <ipAddress>127.0.0.1</ipAddress>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </post>
+  <post dsq:id="2">
+    <id>1</id>
+    <message>Yo dude</message>
+    <parent dsq:id="1">2</parent>
+    <thread>1</thread>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <ipAddress>127.0.0.1</ipAddress>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </post>
+  <post>
+    <id>3</id>
+    <message/>
+    <thread dsq:id="2"/>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <ipAddress>127.0.0.1</ipAddress>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </post>
+
+-->
+
