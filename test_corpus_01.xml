@@ -1,62 +1,172 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
-<leesplankje xmlns="http://example.com/leesplankje" xmlns:dsq="http://example.com/leesplankje/dsq">
+<disqus xmlns="http://disqus.com"
+        xmlns:dsq="http://disqus.com/disqus-internals"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://disqus.com/api/schemas/1.0/disqus.xsd http://disqus.com/api/schemas/1.0/disqus-internals.xsd">
 
-  <aap dsq:id="1">AA</aap>
-  <aap dsq:id="2">BB</aap>
-  <aap dsq:id="3">CC</aap>
-  <aap dsq:id="4">DD</aap>
+  <thread dsq:id="1"><link>http://example.com/aaaa</link></thread>
+  <thread dsq:id="2"><link>http://example.com/bbbb</link></thread>
+  <thread dsq:id="3"><link>http://example.com/cccc</link></thread>
+  <thread dsq:id="4"><link>http://example.com/dddd</link></thread>
 
-  <noot>
-    <wim>AAA</wim>
-    <aap dsq:id="1" />
-  </noot>
+  <post>
+    <id>39</id>
+    <message><![CDATA[<p>AAA en nogmaals AAA</p>]]></message>
+    <createdAt>2015-12-04T15:36:20Z</createdAt>
+    <author>
+      <email>aaa@example.com</email>
+    </author>
+    <thread dsq:id="1" />
+  </post>
 
-  <noot>
-    <wim>BBB</wim>
-    <aap dsq:id="1" />
-  </noot>
+  <post>
+    <id>42</id>
+    <message><![CDATA[<p>BBB</p>]]></message>
+    <createdAt>2015-11-04T15:36:20Z</createdAt>
+    <author>
+      <email>bbb@example.com</email>
+    </author>
+    <thread dsq:id="1" />
+  </post>
 
-  <noot>
-    <wim>CCC</wim>
-    <aap dsq:id="2" />
-  </noot>
+  <post>
+    <id>92</id>
+    <message><![CDATA[<p>CCC</p>]]></message>
+    <createdAt>2015-10-04T15:36:20Z</createdAt>
+    <author>
+      <email>ccc@example.com</email>
+    </author>
+    <thread dsq:id="2" />
+  </post>
 
-  <noot>
-    <wim>DDD</wim>
-    <aap dsq:id="2" />
-  </noot>
+  <post>
+    <id>102</id>
+    <message><![CDATA[<p>DDD</p>]]></message>
+    <createdAt>2015-09-04T15:36:20Z</createdAt>
+    <author>
+      <email>ddd@example.com</email>
+    </author>
+    <thread dsq:id="2" />
+  </post>
 
-  <noot>
-    <wim>EEE</wim>
-    <aap dsq:id="2" />
-  </noot>
+  <post>
+    <id>140</id>
+    <message><![CDATA[<p>EEE</p>]]></message>
+    <createdAt>2016-08-04T15:36:20Z</createdAt>
+    <author>
+      <email>eee@example.com</email>
+    </author>
+    <thread dsq:id="2" />
+  </post>
 
-  <noot>
-    <wim>FFF</wim>
-    <aap dsq:id="4" />
-  </noot>
+  <post>
+    <id>146</id>
+    <message><![CDATA[<p>FFF</p>]]></message>
+    <createdAt>2015-05-04T15:36:20Z</createdAt>
+    <author>
+      <email>fff@example.com</email>
+    </author>
+    <thread dsq:id="4" />
+  </post>
 
-  <noot>
-    <wim>GGG</wim>
-    <aap dsq:id="3" />
-  </noot>
+  <post>
+    <id>188</id>
+    <message><![CDATA[<p>GGG</p>]]></message>
+    <createdAt>2015-04-04T15:36:20Z</createdAt>
+    <author>
+      <email>ggg@example.com</email>
+    </author>
+    <thread dsq:id="3" />
+  </post>
 
-  <noot>
-    <wim>HHH</wim>
-    <aap dsq:id="3" />
-  </noot>
+  <post>
+    <id>218</id>
+    <message><![CDATA[<p>HHH</p>]]></message>
+    <createdAt>2015-03-04T15:36:20Z</createdAt>
+    <author>
+      <email>hhh@example.com</email>
+    </author>
+    <thread dsq:id="3" />
+  </post>
 
-  <noot>
-    <wim>III</wim>
-    <aap dsq:id="4" />
-  </noot>
+  <post>
+    <id>268</id>
+    <message><![CDATA[<p>III</p>]]></message>
+    <createdAt>2015-02-04T15:36:20Z</createdAt>
+    <author>
+      <email>iii@example.com</email>
+    </author>
+    <thread dsq:id="4" />
+  </post>
 
-  <noot>
-    <wim>JJJ</wim>
-    <aap dsq:id="3" />
-  </noot>
+  <post>
+    <id>293</id>
+    <message><![CDATA[<p>JJJ</p>]]></message>
+    <createdAt>2015-01-04T15:36:20Z</createdAt>
+    <author>
+      <email>jjj@example.com</email>
+    </author>
+    <thread dsq:id="4" />
+    <parent dsq:id="1">268</parent>
+  </post>
+
+</disqus>
 
 
+<!--
 
-</leesplankje>
+  <thread dsq:id="2">
+    <id>1</id>
+    <forum>disqusdev</forum>
+    <category dsq:id="1"/>
+    <link/>
+    <title/>
+    <message/>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </thread>
+
+  ...
+
+  <post dsq:id="1">
+    <id>2</id>
+    <message>Mother Russia</message>
+    <thread>1</thread>
+    <isSpam>true</isSpam>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <ipAddress>127.0.0.1</ipAddress>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </post>
+  <post dsq:id="2">
+    <id>1</id>
+    <message>Yo dude</message>
+    <parent dsq:id="1">2</parent>
+    <thread>1</thread>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <ipAddress>127.0.0.1</ipAddress>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </post>
+  <post>
+    <id>3</id>
+    <message/>
+    <thread dsq:id="2"/>
+    <createdAt>2012-12-12T12:12:12</createdAt>
+    <ipAddress>127.0.0.1</ipAddress>
+    <author>
+      <name>Baz</name>
+      <email>foo@bar.com</email>
+    </author>
+  </post>
+
+-->
+

@@ -24,15 +24,16 @@ end
 
 class Post
 
-  attr_accessor :user_email, :text
+  attr_accessor :user_email, :text, :created_at
 
-  def initialize(user_email = nil, text = nil)
+  def initialize(user_email = nil, text = nil, created_at = nil)
     @user_email = user_email
     @text = text
+    @created_at = created_at
   end
 
   def to_s
-    "\tMAIL: #{@user_email}\n\tTEXT: #{@text}\n"
+    "\tMAIL: #{@user_email}\n\tTEXT: #{@text}\nCREATED_AT: #{@created_at}"
   end
 
 end
@@ -44,9 +45,15 @@ ns = doc.namespaces
 threads = {}
 
 doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
-  text  = nokogiri_post.xpath('./xmlns:message', ns).text
-  email = nokogiri_post.xpath('./xmlns:author/xmlns:email', ns).text
-  post = Post.new(email, text)
+  text       = nokogiri_post.xpath('./xmlns:message', ns).text
+  email      = nokogiri_post.xpath('./xmlns:author/xmlns:email', ns).text
+  created_at = nokogiri_post.xpath('./xmlns:createdAt', ns).text
+
+  byebug
+
+  post = Post.new(email, text, created_at)
+
+  byebug if (text == "JJJ" || text == "III")
 
   thread_id = nokogiri_post.at_xpath('./xmlns:thread', ns).attributes["id"].value
 
