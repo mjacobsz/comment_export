@@ -49,11 +49,7 @@ doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
   email      = nokogiri_post.xpath('./xmlns:author/xmlns:email', ns).text
   created_at = nokogiri_post.xpath('./xmlns:createdAt', ns).text
 
-  byebug
-
   post = Post.new(email, text, created_at)
-
-  byebug if (text == "JJJ" || text == "III")
 
   thread_id = nokogiri_post.at_xpath('./xmlns:thread', ns).attributes["id"].value
 
