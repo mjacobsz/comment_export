@@ -3,63 +3,11 @@ require 'nokogiri'
 require 'byebug'
 require 'json'
 require 'date'
+require './mcthread.rb'
+require './post.rb'
+require './helper.rb'
 
-class MCThread
-
-  attr_accessor :posts, :link
-
-  def initialize(link = nil, id = nil)
-    @link = link
-    @id = id
-    @posts = []
-  end
-
-  def <<(other)
-    @posts << other
-  end
-
-  def to_s
-    "LINK: #{@link}" + "\n" + @posts.map { |post| post.to_s }.join("\n")
-  end
-
-end
-
-class Post
-
-  attr_accessor :id, :user_email, :text, :deleted, :created_at
-
-  def initialize(id = nil, user_email = nil, text = nil, deleted = nil, created_at = nil)
-    @id = id
-    @user_email = user_email
-    @text = text
-    @deleted = deleted
-    @created_at = created_at
-  end
-
-  def to_s
-    "\tID: #{@id}, MAIL: #{@user_email}\n\tTEXT: #{@text}\nDELETED: #{@deleted}\nCREATED_AT: #{@created_at}"
-  end
-
-end
-
-module Helper
-
-  def self.create_new_suffix
-    current_max = Dir["results/*"].
-      select { |e| e =~ /out/ }.                             # Get only the files in this dir that match our data output file format
-      tap    { |e| puts e }.
-      map    { |e| e.split(/out|\.json/).last.to_i}.max || 0 # From this set, get the maximum suffix
-
-    new_max = current_max + 1
-
-    raise "\nMAX SUFFIX REACHED: #{new_max}" if new_max > 99
-
-    new_max < 10 ? "0#{new_max}" : new_max.to_s
-  end
-
-end
-
-
+# You need to be in on this path to run this program
 OBLIGATORY_PATH = "/Users/marvin/projects/comment_export"
 
 raise "You should be on this path when running this file: #{OBLIGATORY_PATH}" unless Dir.pwd == OBLIGATORY_PATH
@@ -78,12 +26,15 @@ if File.file?("results/out.json")
   FileUtils.cp "results/out.json", new_filename
 end
 
+# container to store all of 'em treads
 threads = {}
 
+# statistics
 deleted_values = 0
 non_deleted_values = 0
 other = 0
 
+# Loop through all posts; create a thread if none exists yet for this post
 doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
   id         = nokogiri_post["dsq:id"]
   text       = nokogiri_post.xpath('./xmlns:message', ns).text

@@ -1,22 +1,17 @@
-require 'Faker'
-
 class Post
 
-  attr_accessor :user_email, :text
+  attr_accessor :id, :user_email, :text, :deleted, :created_at
 
-  def initialize(user_email = nil, text = nil)
+  def initialize(id = nil, user_email = nil, text = nil, deleted = nil, created_at = nil)
+    @id = id
     @user_email = user_email
     @text = text
+    @deleted = deleted
+    @created_at = created_at
   end
 
   def to_s
-    "\tMAIL: #{@user_email}\n\tTEXT: #{@text}\n"
-  end
-
-  def self.gimme_some_posts(n)
-    n.times.map do
-      new(Faker::Internet::email, Faker::Lorem.paragraphs.join)
-    end
+    "\tID: #{@id}, MAIL: #{@user_email}\n\tTEXT: #{@text}\nDELETED: #{@deleted}\nCREATED_AT: #{@created_at}"
   end
 
 end

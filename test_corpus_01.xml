@@ -10,8 +10,8 @@
   <thread dsq:id="3"><link>http://example.com/cccc</link></thread>
   <thread dsq:id="4"><link>http://example.com/dddd</link></thread>
 
-  <post>
-    <id>39</id>
+  <post dsq:id="81">
+    <id />
     <message><![CDATA[<p>AAA en nogmaals AAA en NOGMAALS AAAA</p>]]></message>
     <createdAt>2015-12-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -21,8 +21,8 @@
     <thread dsq:id="1" />
   </post>
 
-  <post>
-    <id>42</id>
+  <post dsq:id="82">
+    <id />
     <message><![CDATA[<p>BBB</p>]]></message>
     <createdAt>2015-11-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -32,8 +32,8 @@
     <thread dsq:id="1" />
   </post>
 
-  <post>
-    <id>92</id>
+  <post dsq:id="83">
+    <id />
     <message><![CDATA[<p>CCC</p>]]></message>
     <createdAt>2015-10-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -43,8 +43,8 @@
     <thread dsq:id="2" />
   </post>
 
-  <post>
-    <id>102</id>
+  <post dsq:id="84">
+    <id />
     <message><![CDATA[<p>DDD</p>]]></message>
     <createdAt>2015-09-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -54,8 +54,8 @@
     <thread dsq:id="2" />
   </post>
 
-  <post>
-    <id>140</id>
+  <post dsq:id="85">
+    <id />
     <message><![CDATA[<p>EEE</p>]]></message>
     <createdAt>2016-08-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -65,8 +65,8 @@
     <thread dsq:id="2" />
   </post>
 
-  <post>
-    <id>146</id>
+  <post dsq:id="86">
+    <id />
     <message><![CDATA[<p>FFF</p>]]></message>
     <createdAt>2015-05-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -76,8 +76,8 @@
     <thread dsq:id="4" />
   </post>
 
-  <post>
-    <id>188</id>
+  <post dsq:id="87">
+    <id />
     <message><![CDATA[<p>GGG</p>]]></message>
     <createdAt>2015-04-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -87,8 +87,8 @@
     <thread dsq:id="3" />
   </post>
 
-  <post>
-    <id>218</id>
+  <post dsq:id="88">
+    <id />
     <message><![CDATA[<p>HHH</p>]]></message>
     <createdAt>2015-03-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -98,8 +98,8 @@
     <thread dsq:id="3" />
   </post>
 
-  <post>
-    <id>268</id>
+  <post dsq:id="89">
+    <id />
     <message><![CDATA[<p>III</p>]]></message>
     <createdAt>2015-02-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -109,8 +109,8 @@
     <thread dsq:id="4" />
   </post>
 
-  <post>
-    <id>293</id>
+  <post dsq:id="90">
+    <id />>
     <message><![CDATA[<p>JJJ</p>]]></message>
     <createdAt>2015-01-04T15:36:20Z</createdAt>
     <isDeleted>false</isDeleted>
@@ -118,7 +118,7 @@
       <email>jjj@example.com</email>
     </author>
     <thread dsq:id="4" />
-    <parent dsq:id="1">268</parent>
+    <parent dsq:id="1">89</parent>
   </post>
 
 </disqus>
