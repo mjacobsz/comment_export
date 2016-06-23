@@ -26,9 +26,10 @@ end
 
 class Post
 
-  attr_accessor :user_email, :text, :deleted, :created_at
+  attr_accessor :id, :user_email, :text, :deleted, :created_at
 
-  def initialize(user_email = nil, text = nil, deleted = nil, created_at = nil)
+  def initialize(id = nil, user_email = nil, text = nil, deleted = nil, created_at = nil)
+    @id = id
     @user_email = user_email
     @text = text
     @deleted = deleted
@@ -36,7 +37,7 @@ class Post
   end
 
   def to_s
-    "\tMAIL: #{@user_email}\n\tTEXT: #{@text}\nDELETED: #{@deleted}\nCREATED_AT: #{@created_at}"
+    "\tID: #{@id}, MAIL: #{@user_email}\n\tTEXT: #{@text}\nDELETED: #{@deleted}\nCREATED_AT: #{@created_at}"
   end
 
 end
@@ -84,6 +85,7 @@ non_deleted_values = 0
 other = 0
 
 doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
+  id         = nokogiri_post["dsq:id"]
   text       = nokogiri_post.xpath('./xmlns:message', ns).text
   email      = nokogiri_post.xpath('./xmlns:author/xmlns:email', ns).text
   deleted    = nokogiri_post.xpath('./xmlns:isDeleted', ns).text == "true" ? true : false
@@ -91,7 +93,7 @@ doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
 
   deleted ? (deleted_values += 1) : (non_deleted_values += 1)
 
-  post = Post.new(email, text, deleted, created_at)
+  post = Post.new(id, email, text, deleted, created_at)
 
   thread_id = nokogiri_post.at_xpath('./xmlns:thread', ns).attributes["id"].value
 
