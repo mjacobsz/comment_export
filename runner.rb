@@ -61,6 +61,9 @@ end
 puts "Deleted values: #{deleted_values}"
 puts "Non deleted values: #{non_deleted_values}"
 
+# Delete all threads that are not from our live server
+threads.delete_if { |id, thread| thread.link !~ /https?:\/\/makerschannel.com/ }
+
 # Remove dopples
 threads.each do |id, thread|
   thread.posts.uniq! { |p| p.text }
