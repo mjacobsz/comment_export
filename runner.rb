@@ -61,6 +61,11 @@ end
 puts "Deleted values: #{deleted_values}"
 puts "Non deleted values: #{non_deleted_values}"
 
+# Remove dopples
+threads.each do |id, thread|
+  thread.posts.uniq! { |p| p.text }
+end
+
 File.open(output_filename,"w") do |f|
   threads.each { |t|
     f.puts(t)
