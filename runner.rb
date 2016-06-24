@@ -40,11 +40,12 @@ doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
   text       = nokogiri_post.xpath('./xmlns:message', ns).text
   email      = nokogiri_post.xpath('./xmlns:author/xmlns:email', ns).text
   deleted    = nokogiri_post.xpath('./xmlns:isDeleted', ns).text == "true" ? true : false
+  spam       = nokogiri_post.xpath('./xmlns:isSpam', ns).text == "true" ? true : false
   created_at = DateTime.parse(nokogiri_post.xpath('./xmlns:createdAt', ns).text)
 
   deleted ? (deleted_values += 1) : (non_deleted_values += 1)
 
-  post = Post.new(id, email, text, deleted, created_at)
+  post = Post.new(id, email, text, spam, deleted, created_at)
 
   thread_id = nokogiri_post.at_xpath('./xmlns:thread', ns).attributes["id"].value
 
