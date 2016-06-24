@@ -65,9 +65,7 @@ puts "Non deleted values: #{non_deleted_values}"
 threads.delete_if { |id, thread| thread.link !~ /https?:\/\/makerschannel.com/ }
 
 # Remove dopples
-threads.each do |id, thread|
-  thread.posts.uniq! { |p| p.text }
-end
+threads.each { |id, thread| thread.posts.uniq! { |p| p.text } }
 
 File.open(output_filename,"w") do |f|
   threads.each { |t|
