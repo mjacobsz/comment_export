@@ -55,7 +55,7 @@ doc.xpath('/xmlns:disqus/xmlns:post', ns).each do |nokogiri_post|
     threads[thread_id] = MCThread.new(link, thread_id)
   end
 
-  threads[thread_id] << post
+  threads[thread_id] << post unless deleted
 end
 
 puts "Deleted values: #{deleted_values}"
