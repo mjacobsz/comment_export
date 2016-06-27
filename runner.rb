@@ -64,6 +64,9 @@ puts "Non deleted values: #{non_deleted_values}"
 # Delete all threads that are not from our live server
 threads.delete_if { |id, thread| thread.link !~ /https?:\/\/makerschannel.com/ }
 
+# If there's a regular link, without any id, we don't know at production it belongs (i.e. http://makerschannel.com/nl/dusdavidgames/minetopia)
+threads.delete_if { |id, thread| thread.link !~ /\d{3,4}/ }
+
 # Remove dopples
 threads.each { |id, thread| thread.posts.uniq! { |p| p.text } }
 
